@@ -1,18 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-function Nav({ performSearch }) {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    performSearch(e.target.search.value);
-    e.currentTarget.reset();
-  }
-
+function Nav() {
   return (
     <nav className="main-nav">
-      <form onSubmit={handleSubmit}>
-        <input type="text" name="search" placeholder="Search" required />
-        <button type="submit">Search</button>
-      </form>
+      <ul>
+        <li><Link to="/cats">Cats</Link></li>
+        <li><Link to="/dogs">Dogs</Link></li>
+        <li><Link to="/computers">Computers</Link></li>
+      </ul>
     </nav>
   );
 }

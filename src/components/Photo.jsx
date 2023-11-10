@@ -1,9 +1,11 @@
 import React from 'react';
 
 function Photo({ photo }) {
+  const imageUrl = `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`;
+
   return (
     <li>
-      <img src={photo.url_s} alt={photo.title} />
+      <img src={imageUrl} alt={photo.title} />
     </li>
   );
 }
